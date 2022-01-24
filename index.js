@@ -6,12 +6,12 @@ app.set('view engine', 'ejs');
 
 app.get('/:nome/:linguagem', (req, res) => {
     //res.send("ola mundo")
-    var nome = "Carlos Jaime"
-    var linguagem = "PHP E JS "
+    var exibir = true;
     res.render("index", {
         nome: req.params.nome,
         linguagem: req.params.linguagem,
-        empresa: "B&R"
+        empresa: "B&R",
+        exibir: exibir
     })
 })
 

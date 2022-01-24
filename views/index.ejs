@@ -13,14 +13,23 @@
     <hr>
     <h3>Lista de perguntas</h3>
     <h4>
+        seu nome
         <%= nome %>
     </h4>
     <p>
+        linguagem favorita
         <%= linguagem %>
     </p>
     <p>
+        è da empresa
         <%= empresa %>
     </p>
+
+    <% if(exibir == true){ %>
+        <h3>É uma mensagem de erro</h3>
+        <% }else{ %>
+            <h3>Nenhum erro</h3>
+            <% } %>
 </body>
 
 </html>
