@@ -1,3 +1,8 @@
 EJS permite desenhar html na rota
 Permite tambem usar codigo js dentro do html
 https://ejs.co/
+
+- npm start
+- npm install EJS
+- npm install express
+- npm install body-parser
