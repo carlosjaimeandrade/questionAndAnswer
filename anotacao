@@ -3,6 +3,8 @@ Permite tambem usar codigo js dentro do html
 https://ejs.co/
 
 - npm start
-- npm install EJS
-- npm install express
-- npm install body-parser
+- npm install EJS // permite trabalhar com js junto com HTML
+- npm install express // permite criar um servidor com rotas
+- npm install body-parser  // permiti codificar os dados vindo do corpo da requisição
+- npm install sequelize //permite trabalhar com banco de dados
+- npm install install --save mysql2
