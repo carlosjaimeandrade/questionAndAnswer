@@ -30,6 +30,16 @@
         <% }else{ %>
             <h3>Nenhum erro</h3>
             <% } %>
+
+    <h5>Listagem de produtos</h5>
+    <ul>
+        <% produtos.forEach(e=>{%>
+        <li><%= e.nome%></li>
+        <li><%= e.preco%></li>
+        <% })%>
+    </ul>
+
+
 </body>
 
 </html>
