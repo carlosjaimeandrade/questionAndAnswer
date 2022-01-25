@@ -5,21 +5,8 @@ const app = new express();
 app.set('view engine', 'ejs');
 app.use(express.static('public')); // informando onde será meus arquivos static como css 
 
-app.get('/:nome/:linguagem', (req, res) => {
-    //res.send("ola mundo")
-    var exibir = true;
-    var produtos = [
-        { nome: "Doritos", preco: 45.5 },
-        { nome: "Doritos1", preco: 45.5 },
-        { nome: "Doritos2", preco: 45.5 }
-    ];
-    res.render("index", {
-        nome: req.params.nome,
-        linguagem: req.params.linguagem,
-        empresa: "B&R",
-        exibir: exibir,
-        produtos: produtos
-    })
+app.get('/', (req, res) => {
+    res.render('index')
 })
 
 app.listen(8580, () => {

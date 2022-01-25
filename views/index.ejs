@@ -1,54 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guia de perguntas</title>
-    <link rel="stylesheet" href="/css/style.css">
-<!--     aqui vamos definir não precisa colocar o caminho inteiro pois o EJS 
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Guia de perguntas</title>
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        
+        <!--     aqui vamos definir não precisa colocar o caminho inteiro pois o EJS 
     consegue indentificar a pasta public e depois a pasta css -->
-</head>
+    </head>
 
-<body>
-    <h1>Guia Perguntas</h1>
-    <hr>
-    <h3>Lista de perguntas</h3>
-    <h4>
-        seu nome
-        <%= nome %>
-    </h4>
-    <p>
-        linguagem favorita
-        <%= linguagem %>
-    </p>
-    <p>
-        è da empresa
-        <%= empresa %>
-    </p>
+    <body>
 
-    <% if(exibir==true){ %>
-        <h3>É uma mensagem de erro</h3>
-    <% }else{ %>
-        <h3>Nenhum erro</h3>
-    <% } %>
 
-    <h5>Listagem de produtos</h5>
-
-    <ul>
-        <% produtos.forEach(e=>{%>
-            <li>
-                <%= e.nome%>
-            </li>
-            <li>
-                <%= e.preco%>
-            </li>
-        <% })%>
-    </ul>
-
-    <img src="/img/images.png" alt="">
-
-</body>
-
+    </body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.min.js"></script>
 </html>
