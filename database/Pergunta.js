@@ -14,3 +14,4 @@ const Pergunta = connection.define('pergunta',{
 
 Pergunta.sync({force:false}).then(()=>{}) //cria a tabela false é para criar apenas 1 vez
 
+module.exports = Pergunta;
