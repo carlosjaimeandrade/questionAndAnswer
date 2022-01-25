@@ -13,6 +13,10 @@ app.get('/perguntar', (req, res) => {
     res.render('perguntar')
 })
 
+app.post('/salvarperguntar', (req, res) => {
+    res.send("ola")
+})
+
 app.listen(8580, () => {
     console.log('app rodando')
 })
