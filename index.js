@@ -1,6 +1,15 @@
 const express = require('express');
 const app = new express();
 const bodyParser = require('body-parser')
+const connection = require('./database/database')
+
+connection.authenticate()
+    .then(()=>{
+    console.log('conexao feita com sucesso')
+}).catch(err =>{
+    console.log(err)
+})
+
 
 //meu motor de html sera o EJS - definindo
 app.set('view engine', 'ejs');
