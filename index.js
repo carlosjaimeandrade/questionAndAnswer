@@ -3,6 +3,7 @@ const app = new express();
 
 //meu motor de html sera o EJS - definindo
 app.set('view engine', 'ejs');
+app.use(express.static('public')); // informando onde será meus arquivos static como css 
 
 app.get('/:nome/:linguagem', (req, res) => {
     //res.send("ola mundo")
