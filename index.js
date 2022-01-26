@@ -3,6 +3,8 @@ const app = new express();
 const bodyParser = require('body-parser')
 const connection = require('./database/database')
 const Pergunta = require('./database/Pergunta')
+const Resposta = require('./database/Resposta')
+
 
 connection.authenticate()
     .then(()=>{
