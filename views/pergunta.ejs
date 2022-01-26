@@ -20,21 +20,19 @@
                 </form>
             </div>
         </div>
+        <% respostas.forEach(resposta=>{ %>
+            <div class="card m-5">
+            
+                <div class="card-header">
+                    <b><%= resposta.createdAt.toLocaleString("pt-BR") %>:</b>
+                </div>
 
-        <div class="card m-5">
-            <div class="card-header">
-                <h3>Respostas</h3>
+                <div class="card-body">
+                    <%= resposta.corpo %>
+                </div>
+            
             </div>
-            <div class="card-body">
-                <ul>
-                    <% respostas.forEach(resposta=>{ %>
-                        
-                        <li><%= resposta.corpo %> </li>
-                    
-                    <% })%>
-                </ul>
-            </div>
-        </div>
+        <% })%>
     </div>
     </div>
 

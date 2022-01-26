@@ -56,7 +56,8 @@ app.get('/pergunta/:id', (req, res) => {
                 raw: true,
                 where: {
                     perguntaId: id
-                }
+                },
+                order: [['id', 'DESC']]
             }).then(respostas => {
                 res.render('pergunta', {
                     pergunta: pergunta,
