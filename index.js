@@ -20,7 +20,12 @@ app.use(bodyParser.urlencoded({ extended: true })) //configurando o body parser 
 app.use(bodyParser.json()); //configurando para retorno em json trabalhar com epi
 
 app.get('/', (req, res) => {
-    res.render('index')
+    Pergunta.findAll({raw: true}).then(perguntas=>{
+        res.render('index',{
+            perguntas: perguntas
+        })
+    })
+    
 })
 
 app.get('/perguntar', (req, res) => {

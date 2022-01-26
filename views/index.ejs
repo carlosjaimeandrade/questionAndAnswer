@@ -1,10 +1,15 @@
 <%- include('partials/header.ejs') %>
 
-<body>
-    <%- include('partials/nav.ejs') %>
-    <h2>Pagina Home</h2>
-</body>
+    <body>
+        <%- include('partials/nav.ejs') %>
+            <h2>Pagina Home</h2>
+
+            <% perguntas.forEach(e=>{ %>
+                <b>Pergunta:</b><p><%= e.titulo %></p>
+                <b>Descrição:</b><p><%= e.descricao %></p>
+            <% }) %>
+
+    </body>
 
 
-<%- include('partials/footer.ejs') %>
-
+    <%- include('partials/footer.ejs') %>
