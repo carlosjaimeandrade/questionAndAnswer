@@ -9,12 +9,14 @@
                 <h3>Pergunta</h3>
             </div>
             <div class="card-body">
-                <form method="post" action="/salvarperguntar">
                     <b>Titulo</b><br>
                     <%= pergunta.titulo %><br>
                     <b>Descrição</b><br>
                     <%= pergunta.descricao %><br>
-                    <button class="btn btn-success mt-4">Responder</button>
+                <form action="">
+                    <h4>Responda</h4>
+                    <textarea class="form-control" placeholder="informe sua resposta" name="corpo"></textarea>
+                    <button type="submit" class="btn btn-primary mt-2">Responder</button>
                 </form>
             </div>
         </div>
