@@ -13,11 +13,26 @@
                     <%= pergunta.titulo %><br>
                     <b>Descrição</b><br>
                     <%= pergunta.descricao %><br>
-                <form action="">
+                <form method="post">
                     <h4>Responda</h4>
                     <textarea class="form-control" placeholder="informe sua resposta" name="corpo"></textarea>
                     <button type="submit" class="btn btn-primary mt-2">Responder</button>
                 </form>
+            </div>
+        </div>
+
+        <div class="card m-5">
+            <div class="card-header">
+                <h3>Respostas</h3>
+            </div>
+            <div class="card-body">
+                <ul>
+                    <% respostas.forEach(resposta=>{ %>
+                        
+                        <li><%= resposta.corpo %> </li>
+                    
+                    <% })%>
+                </ul>
             </div>
         </div>
     </div>

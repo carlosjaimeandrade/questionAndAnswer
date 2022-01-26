@@ -7,11 +7,11 @@ const Resposta = require('./database/Resposta')
 
 
 connection.authenticate()
-    .then(()=>{
-    console.log('conexao feita com sucesso')
-}).catch(err =>{
-    console.log(err)
-})
+    .then(() => {
+        console.log('conexao feita com sucesso')
+    }).catch(err => {
+        console.log(err)
+    })
 
 
 //meu motor de html sera o EJS - definindo
@@ -22,12 +22,12 @@ app.use(bodyParser.urlencoded({ extended: true })) //configurando o body parser 
 app.use(bodyParser.json()); //configurando para retorno em json trabalhar com epi
 
 app.get('/', (req, res) => {
-    Pergunta.findAll({raw: true, order: [['id', 'DESC']]}).then(perguntas=>{
-        res.render('index',{
+    Pergunta.findAll({ raw: true, order: [['id', 'DESC']] }).then(perguntas => {
+        res.render('index', {
             perguntas: perguntas
         })
     })
-    
+
 })
 
 app.get('/perguntar', (req, res) => {
@@ -40,25 +40,45 @@ app.post('/salvarperguntar', (req, res) => {
     Pergunta.create({
         titulo: titulo,
         descricao: descricao
-    }).then(()=>{
+    }).then(() => {
         res.redirect('/')
     })
 })
 
-app.get('/pergunta/:id',(req, res)=>{
+app.get('/pergunta/:id', (req, res) => {
     const id = req.params.id;
 
     Pergunta.findOne({
-        where: {id: id}
-    }).then(pergunta =>{
-        if(pergunta != undefined){
-            console.log(pergunta)
-            res.render('pergunta',{pergunta:pergunta})
-        }else{
+        where: { id: id }
+    }).then(pergunta => {
+        if (pergunta != undefined) {
+            Resposta.findAll({
+                raw: true,
+                where: {
+                    perguntaId: id
+                }
+            }).then(respostas => {
+                res.render('pergunta', {
+                    pergunta: pergunta,
+                    respostas: respostas
+                })
+            })
+        } else {
             res.redirect('/')
         }
     }) //retorna 1 unico registros
 
+})
+
+app.post('/pergunta/:id', (req, res) => {
+    const id = req.params.id;
+    const corpo = req.body.corpo
+    Resposta.create({
+        corpo: corpo,
+        perguntaId: id
+    }).then(() => {
+        res.redirect('/pergunta/' + id)
+    })
 
 })
 
