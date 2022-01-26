@@ -82,6 +82,18 @@ app.post('/pergunta/:id', (req, res) => {
 
 })
 
+app.get('/delete/:id', (req, res)=>{
+    const id = req.params.id
+
+    Pergunta.destroy({
+        where: {
+            id: id
+        }
+    }).then(()=>{
+        res.redirect('/')
+    })
+})
+
 app.listen(8580, () => {
     console.log('app rodando')
 })
