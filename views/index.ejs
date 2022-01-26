@@ -9,11 +9,10 @@
             <% perguntas.forEach(e=>{ %>
                 <div class="card m-2">
                     <div class="card-body">
-                        <b>Pergunta:</b><p><%= e.titulo %></p>
-                        <b>Descrição:</b><p><%= e.descricao %></p>
+                        <h4><p><%= e.titulo %></p></h4>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary">Responder</button>
+                        <a href="/pergunta/<%= e.id%>" class="btn btn-primary">Responder</a>
                     </div>
                 </div>
           

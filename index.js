@@ -43,6 +43,23 @@ app.post('/salvarperguntar', (req, res) => {
     })
 })
 
+app.get('/pergunta/:id',(req, res)=>{
+    const id = req.params.id;
+
+    Pergunta.findOne({
+        where: {id: id}
+    }).then(pergunta =>{
+        if(pergunta != undefined){
+            console.log(pergunta)
+            res.render('pergunta',{pergunta:pergunta})
+        }else{
+            res.redirect('/')
+        }
+    }) //retorna 1 unico registros
+
+
+})
+
 app.listen(8580, () => {
     console.log('app rodando')
 })

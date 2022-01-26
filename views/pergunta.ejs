@@ -1,0 +1,28 @@
+<%- include('partials/header.ejs') %>
+
+<body>
+    <%- include('partials/nav.ejs') %>
+
+    <div class="container">
+        <div class="card m-5">
+            <div class="card-header">
+                <h3>Pergunta</h3>
+            </div>
+            <div class="card-body">
+                <form method="post" action="/salvarperguntar">
+                    <b>Titulo</b><br>
+                    <%= pergunta.titulo %><br>
+                    <b>Descrição</b><br>
+                    <%= pergunta.descricao %><br>
+                    <button class="btn btn-success mt-4">Responder</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</body>
+
+
+<%- include('partials/footer.ejs') %>
+
